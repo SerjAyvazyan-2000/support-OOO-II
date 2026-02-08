@@ -1,7 +1,7 @@
 import Button from "../../UI/button/button";
 import Modal from "../../UI/modal/modal";
 import "./header.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation, useMatches } from "react-router-dom";
 
 type RouteHandle = {

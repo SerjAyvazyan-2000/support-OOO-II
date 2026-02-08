@@ -1,5 +1,5 @@
 import "./chat.scss";
-import { useRef ,useState} from "react";
+import { useRef } from "react";
 
 
 const Chat = () => {

@@ -1,6 +1,5 @@
 import ChatsCalendar from "../../components/chatsCalendar/chatsCalendar.tsx";
 import AllChats from "../../components/allChats/allChats.tsx";
-import PrimaryAction from "../../UI/primaryAction/primaryAction.tsx";
 import ChatSearch from "../../UI/search/search.tsx";
 import "./allAdminChats.scss";
 import { useState } from "react";

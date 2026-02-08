@@ -1,7 +1,6 @@
 import Chat from "../../components/chat/chat";
 import ChatSearch from "../../UI/search/search";
 import "./chatWithUser.scss";
-import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import PrimaryAction from "../../UI/primaryAction/primaryAction";
 import Modal from "../../UI/modal/modal";
@@ -12,7 +11,6 @@ const ChatWithUser = () => {
   const [isNewScriptOpen, setIsNewScriptOpen] = useState(false);
   const [isEditScriptOpen, setIsEditScriptOpen] = useState(false);
 
-  const { state } = useLocation();
 
   return (
     <>
