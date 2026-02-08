@@ -1,0 +1,25 @@
+@use "../../assets/scss/mixin";
+@use "../../assets/scss/variables";
+
+.primary-link {
+  gap: 8px;
+  background: #0d40c2;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  transition: .3s;
+  color: #ffffff;
+    padding: 12px;
+
+
+  i {
+    font-size: 22px;
+    background: #ffffff;
+  }
+
+  &:hover{
+background: #161616;
+
+  }
+}

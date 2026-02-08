@@ -1,0 +1,37 @@
+.btn {
+  max-width: 50%;
+  width: 100%;
+  padding: 13px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  transition: .3s;
+  min-width: max-content;
+}
+
+.btn-black {
+  background: #161616;
+  color: #ffffff;
+
+  &:hover {
+background: #0D40C2;
+  }
+}
+
+.btn-gray {
+  background: #F5F6FB;
+  color: #0f0f0f;
+  border: 1px solid #EEEEEE;
+
+  &:hover {
+background: #161616;
+color: white;
+  }
+
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

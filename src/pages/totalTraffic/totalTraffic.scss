@@ -1,0 +1,40 @@
+.total-traffic-main-cnt {
+  max-width: 1445px;
+  width: 100%;
+  padding: 20px;
+  height: calc(100vh - 90px);
+  max-height: max-content;
+}
+
+.total-traffic-cnt {
+  max-width: 1405px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  height: calc(100vh - 90px);
+  max-height: max-content;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 6px;
+  }
+}
+.total-traffic-header {
+  justify-content: space-between;
+}
+.total-traffic-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #161616;
+}
+.total-traffic-table {
+  margin-top: 20px;
+}

@@ -1,0 +1,95 @@
+@use "./assets/scss/flex";
+@use "./assets/scss/normalize";
+@use "./assets/scss/mixin";
+@use "./assets/scss/variables";
+@import "assets/icons/icon.css";
+
+#root {
+  height: 100%;
+}
+html {
+  scrollbar-gutter: stable;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #000;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 6px;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  background: #f6f6f6;
+  overflow: hidden;
+}
+.main {
+  min-height: 100%;
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.text-wrap {
+  display: block;
+}
+.mobile-text-wrap {
+  @include mixin.screen-max-width-576 {
+    display: block;
+  }
+}
+.desktop-text-wrap {
+  display: block;
+  @include mixin.screen-max-width-576 {
+    display: inline;
+  }
+}
+
+.mobile-block {
+  display: none;
+  @include mixin.screen-max-width-767 {
+    display: block;
+  }
+}
+
+.desktop-block {
+  display: flex;
+  @include mixin.screen-max-width-767 {
+    display: none;
+  }
+}
+
+.img-mobile {
+  display: none;
+  @include mixin.screen-max-width-576 {
+    display: block;
+  }
+}
+
+.img-desktop {
+  display: flex;
+  @include mixin.screen-max-width-576 {
+    display: none;
+  }
+}
+
+.sort-available {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 12px;
+  color: #b0b1b5;
+  text-align: center;
+}

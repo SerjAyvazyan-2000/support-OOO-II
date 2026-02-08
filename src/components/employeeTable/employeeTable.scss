@@ -1,0 +1,123 @@
+@use "../../assets/scss/mixin.scss";
+
+.employee-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #d9dee3;
+  border-radius: 10px;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: separate;
+  font-size: 14px;
+
+  td {
+    padding: 10px 12px;
+    border: 1px solid #e4e8ec;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #161616;
+    background: #ffffff;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3) {
+    width: 253px;
+  }
+
+  td:nth-child(1) {
+    width: 140px;
+  }
+
+  td:nth-child(4) {
+    width: 253px;
+  }
+  td:nth-child(5) {
+    width: 131px;
+  }
+  td:nth-child(6) {
+    width: 131px;
+  }
+  td:nth-child(7) {
+    width: 168px;
+  }
+
+  thead {
+    background: #f5f6fb;
+
+    th {
+      font-weight: 600;
+      color: #161616;
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: 22px;
+      border: 1px solid #e4e8ec;
+      height: 92px;
+
+         @include mixin.screen-max-width-1500 {
+          font-size: 12px;
+      line-height: 20px;
+      padding: 4px;
+  }
+    }
+
+    .employee-table-incoming {
+      gap: 9px;
+
+      i {
+        font-size: 15px;
+        background: #0968d6;
+        margin-right: 8px;
+      }
+    }
+
+    .employee-table-outgoing {
+      gap: 9px;
+
+      i {
+        font-size: 15px;
+        background: #1a9e55;
+        margin-right: 8px;
+        transform: rotate(180deg);
+      }
+    }
+    .employee-table-deferred {
+      height: 46px;
+
+      i {
+        font-size: 15px;
+        background: #9747ff;
+        margin-right: 8px;
+      }
+    }
+    .employee-table-return{
+      height: 46px;
+
+      i {
+        font-size: 20px;
+       background: #C0333A;
+
+        margin-right: 8px;
+      }
+    }
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fafafa;
+  }
+
+  .table-total {
+    background: #eef3f7;
+  }
+
+  .table-row-avg {
+    background: #ffffff;
+  }
+
+  .employee-table-row-time {
+    background: #f5f6fb;
+  }
+}

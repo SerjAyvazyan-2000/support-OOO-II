@@ -1,0 +1,83 @@
+.rdp {
+  --rdp-accent-color: #2563eb;
+  --rdp-background-color: #2563eb;
+  --rdp-accent-color-dark: #2563eb;
+}
+.rdp-dropdowns {
+  height: max-content;
+}
+.rdp-caption_label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #161616;
+  text-transform: capitalize;
+
+  svg {
+    display: none;
+  }
+}
+.rdp-nav {
+  height: max-content;
+  gap: 12px;
+}
+.rdp-button_next,
+.rdp-button_previous {
+  width: 20px;
+  height: 22px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+.rdp-chevron {
+  fill: #161616;
+}
+.rdp-month_caption {
+  height: max-content;
+  align-items: center;
+}
+.rdp-month_grid {
+  margin-top: 16px;
+}
+.rdp-day_selected {
+  border-radius: 50%;
+}
+
+.rdp-weekday {
+  padding: 0;
+  opacity: 1;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #b0b1b5;
+  text-transform: uppercase;
+}
+.rdp-day_range_start,
+.rdp-day_range_end {
+  background: #2563eb;
+  color: #fff;
+}
+
+.rdp-day{
+
+}
+.rdp-day_button{
+
+font-weight: 500;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+
+
+}
+
+.rdp-range_end .rdp-day_button{
+    background: #0D40C2;
+
+}
+.rdp-day_range_middle {
+  background: rgba(37, 99, 235, 0.1);
+}

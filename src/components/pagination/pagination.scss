@@ -1,0 +1,55 @@
+
+.pagination-wrapper {
+  gap: 8px;
+  justify-content: center;
+  margin-top: 56px;
+  .icon-arrowRight2 {
+    font-size: 24px;
+    background: #161616;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #0d40c2;
+    }
+  }
+}
+.pagination-arrow-right {
+  transform: rotate(180deg);
+
+  &.inactive {
+    background: #b0b1b5;
+    pointer-events: none;
+  }
+}
+
+.pagination-items {
+  gap: 4px;
+}
+.pagination-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  flex: 0 0 40px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  transition: 0.3s;
+
+  &:hover {
+    background: #f8f8f8;
+  }
+  &.active {
+    background: #f5f6fb;
+  }
+}
+.pagination-point {
+  transition: 0.3s;
+
+  i {
+    font-size: 28px;
+    transition: 0.3s;
+    background: #161616;
+  }
+}
