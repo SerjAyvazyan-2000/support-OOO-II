@@ -1,7 +1,7 @@
 import Chat from "../../components/chat/chat";
 import ChatSearch from "../../UI/search/search";
 import "./chatWithUser.scss";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import PrimaryAction from "../../UI/primaryAction/primaryAction";
 import Modal from "../../UI/modal/modal";
 import Button from "../../UI/button/button";
@@ -10,7 +10,36 @@ const ChatWithUser = () => {
   const [search, setSearch] = useState("");
   const [isNewScriptOpen, setIsNewScriptOpen] = useState(false);
   const [isEditScriptOpen, setIsEditScriptOpen] = useState(false);
+  const [activeItemId, setActiveItemId] = useState<number | null>(null);
+  const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
 
+  const scripts = [
+    { id: 1, title: "Приветствие" },
+    { id: 2, title: "Отмена подписки" },
+    { id: 3, title: "Документы" },
+    { id: 4, title: "Доки Wace" },
+    { id: 5, title: "Баги с редактором" },
+    { id: 6, title: "Помощь" },
+    { id: 7, title: "Отзывы" },
+    { id: 8, title: "Первый чат с клиентом" },
+
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (listRef.current && !listRef.current.contains(e.target as Node)) {
+        setActiveItemId(null);
+        setOpenMenuId(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -129,62 +158,59 @@ const ChatWithUser = () => {
             <p className="response-scripts-title">Скрипты ответов</p>
 
             <div className="response-scripts-cnt">
-              <ul className="response-scripts-items G-flex-column">
-                <li className="response-script-item ">
-                  <span>Приветствие</span>
-                </li>
-                <li className="response-script-item active G-align-center">
-                  <span>Отмена подписки</span>
-                  <i className="icon icon-dots"></i>
-                  <ul className="r-script-sub-list">
-                    <li
-                      onClick={() => setIsEditScriptOpen(!isEditScriptOpen)}
-                      className="r-script-sub-item G-align-center"
-                    >
-                      <i className="icon icon-edit"></i>
-                      <p>Изменить</p>
-                    </li>
+              <ul
+                ref={listRef}
+                className="response-scripts-items G-flex-column"
+              >
+                {scripts.map((item) => (
+                  <li
+                    key={item.id}
+                    className={`response-script-item G-align-center ${
+                      activeItemId === item.id ? "active" : ""
+                    }`}
+                    onClick={() => setActiveItemId(item.id)}
+                  >
+                    <span>{item.title}</span>
 
-                    <li className="r-script-sub-item G-align-center">
-                      <i className="icon icon-basket"></i>
-                      <p>Удалить</p>
-                    </li>
-                  </ul>
-                </li>
-                <li className="response-script-item">
-                  <span>Документы</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Доки Wace</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Баги с редактором</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Помощь</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Отзывы</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Первый чат с клиентом</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Первый чат с клиентом</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Первый чат с клиентом</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Первый чат с клиентом</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Первый чат с клиентом</span>
-                </li>
-                <li className="response-script-item">
-                  <span>Первый чат с клиентом</span>
-                </li>
+                    <i
+                      className="icon icon-dots"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenMenuId(openMenuId === item.id ? null : item.id);
+                      }}
+                    ></i>
+
+                    <ul
+                      className={`r-script-sub-list ${
+                        openMenuId === item.id ? "active" : ""
+                      }`}
+                    >
+                      <li
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsEditScriptOpen(true);
+                        }}
+                        className="r-script-sub-item G-align-center"
+                      >
+                        <i className="icon icon-edit"></i>
+                        <p>Изменить</p>
+                      </li>
+
+                      <li
+                        className="r-script-sub-item G-align-center"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          console.log("Удалить", item.id);
+                        }}
+                      >
+                        <i className="icon icon-basket"></i>
+                        <p>Удалить</p>
+                      </li>
+                    </ul>
+                  </li>
+                ))}
               </ul>
+
               <div className="response-scripts-search">
                 <ChatSearch
                   placeholder="Поиск по скрипту"

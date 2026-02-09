@@ -28,9 +28,9 @@
     border-radius: 6px;
   }
 
-    @include mixin.screen-max-width-1500 {
-      max-width: 305px;
-  min-width: 305px;
+  @include mixin.screen-max-width-1500 {
+    max-width: 305px;
+    min-width: 305px;
   }
 }
 .subscription-status-title {
@@ -288,16 +288,19 @@
 
   &:hover {
     background: #f6f6f6;
-    .r-script-sub-list {
+    .icon-dots {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
     }
   }
   &.active {
     background: #f6f6f6;
-    .r-script-sub-list {
+
+    .icon-dots {
       opacity: 1;
       visibility: visible;
+      pointer-events: auto;
     }
   }
 
@@ -305,7 +308,12 @@
     margin-left: auto;
     background: #b0b1b5;
     font-size: 22px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s;
   }
+
   .r-script-sub-list {
     position: absolute;
     right: 0;
@@ -315,9 +323,12 @@
     background: #ffffff;
     border: 1px solid #eeeeee;
     z-index: 2;
-    opacity: 0;
-    visibility: hidden;
     transition: 0.3s;
+    display: none;
+
+    &.active {
+        display: block;
+    }
   }
 }
 .r-script-sub-item {
