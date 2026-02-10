@@ -1,10 +1,31 @@
-
+@use "../../assets/scss/mixin.scss";
 
 .employee-chats-messages {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-height: 54vh;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 6px;
+  }
+  @include mixin.screen-max-width-1750 {
+    max-height: 40vh;
+  }
+
+  @include mixin.screen-max-width-1500 {
+    max-height: 35vh;
+  }
 }
 .employee-chat-message {
   padding: 16px;
@@ -22,7 +43,7 @@
     font-size: 17px;
   }
   .icon-close {
-   background: #C0333A;
+    background: #c0333a;
 
     font-size: 24px;
   }
@@ -62,7 +83,7 @@
   font-size: 16px;
   line-height: 22px;
   color: #161616;
-      font-weight: 400;
+  font-weight: 400;
 }
 .message-author-info {
   margin-left: 4px;
@@ -105,24 +126,20 @@
   &:hover {
     background: #f8f8f8;
   }
-
- 
 }
 
-.dialogue-read-return-message{
-    transition: 0.3s;
+.dialogue-read-return-message {
+  transition: 0.3s;
 
-    &:hover {
+  &:hover {
     background: #f8f8f8;
   }
 }
 
-.dialogue-read-message{
-    transition: 0.3s;
+.dialogue-read-message {
+  transition: 0.3s;
 
-    &:hover {
+  &:hover {
     background: #f8f8f8;
   }
 }
-
-

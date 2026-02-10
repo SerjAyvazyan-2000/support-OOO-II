@@ -5,6 +5,11 @@
     @content;
   }
 }
+@mixin screen-max-width-1750 {
+  @media (max-width: variables.$max-width-1650) {
+    @content;
+  }
+}
 
 @mixin screen-max-width-1650 {
   @media (max-width: variables.$max-width-1650) {
